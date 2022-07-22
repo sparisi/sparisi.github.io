@@ -158,27 +158,32 @@ html {
   <p><b><font size=+1> Learning and Transfer of State Representations </font></b>
   <p><b><font size=+0> Towards a Near-Universal Representation for RL </font></b>
 
-  <img src="assets/icml2022.jpg" width="75%" style="border-radius:0px" >
+  <img src="assets/icml2022.png" width="75%" style="border-radius:0px" >
 
   In computer vision and natural language processing, recent advances have allowed to exploit massive amounts of data to pre-train perception models.
-  These models can be successfully used ``off-the-shelf'' to solve many different downstream applications without any further training.
-  On the contrary, in RL many algorithms still follow a ``tabula-rasa'' paradigm where the agent performs millions or even billions of in-domain
+  These models can be successfully used "off-the-shelf" to solve many different downstream applications without any further training.
+  On the contrary, in RL many algorithms still follow a "tabula-rasa" paradigm where the agent performs millions or even billions of in-domain
   interactions with the environment to learn task-specific visuo-motor policies from scratch.
 
   <center><i>
   Can we instead train a single near-universal vision model --a model pre-trained entirely on out-of-domain data that works for nearly any RL task?
   </i></center>
-
-  In a preliminary work presented at ICML, we investigated how well-known pre-trained vision models perform when used as perception module for control policies in Habitat, DeepMind Control Suite, Adroit Dexterious Manipulation, and Franka Kitchen.
-  We took a step back and asked fundamental questions about representations and control. Are off-the-shelf supervised models better than self-supervised models? What kind of invariances are relevant for the perception module of the control policy? Is the feature hierarchy of the vision layers important for control?
   <br>
-  By investigating these questions, we succeeded at making a single off-the-shelf vision model --trained on out-of-domain datasets-- to be competitive with or even outperform ground-truth features on all the four control domains.
-  Strong of these results, I believe that research should focus more on learning control policies directly from visual input using pre-trained perception modules, rather than either using hand-designed ground-truth features or learning from scratch perception modules for every new task. Efficient compact state features are hard to estimate in unstructured real-world environments, while training an end-to-end visuo-motor policy requires a significantly larger amount of training data. In this context, the use of pre-trained vision modules offers substantial benefits by dramatically reducing the data requirement and improving the policy performance.
 
+  In a preliminary work presented at ICML, we investigated how well-known pre-trained vision models perform when used as perception module for control
+  policies in Habitat, DeepMind Control Suite, Adroit Dexterious Manipulation, and Franka Kitchen.
+  We took a step back and asked fundamental questions about representations and control.
+  Are off-the-shelf supervised models better than self-supervised models?
+  What kind of invariances are relevant for the perception module of the control policy?
+  Is the feature hierarchy of the vision layers important for control?
   <br>
-  Not only our findings show that it is possible --and beneficial-- to use the same off-the-shelf model for many domains, but also raise several further questions. In our work, we used off-the-self vision models such as ResNet pre-trained on ImageNet: can we develop both a new model and a new dataset that can truly be near-universal --i.e., that transfers to any control task? In our work we focused on imitation learning: do our results also apply to RL?
-  Would the vision model be effective also in real-world problems --where noise and occlusion happen?
-  Can we get a better understanding of convolutional network features by analyzing their performance as perception models for control tasks?
+  By investigating these questions, we succeeded at making a single off-the-shelf vision model
+  --trained on out-of-domain datasets-- to be competitive with or even outperform ground-truth
+  features on all the four control domains.
+  As efficient compact state features are hard to estimate in unstructured real-world environments
+  and the agent needs to rely on raw vision input,
+  our model can be extremely beneficial by
+  dramatically reducing the data requirement and improving the policy performance.
 
   <p><b>References </b></font>
 
