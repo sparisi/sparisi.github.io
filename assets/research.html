@@ -170,14 +170,13 @@ html {
   </i></center>
   <br>
 
-  In a preliminary work presented at ICML, we investigated how well-known pre-trained vision models perform when used as perception module for control
-  policies in Habitat, DeepMind Control Suite, Adroit Dexterious Manipulation, and Franka Kitchen.
-  We took a step back and asked fundamental questions about representations and control.
-  Are off-the-shelf supervised models better than self-supervised models?
+  In a preliminary work presented at ICML, we studied well-known pre-trained vision models
+  in the context of control.
+  Are supervised models better than self-supervised models?
   What kind of invariances are relevant for the perception module of the control policy?
   Is the feature hierarchy of the vision layers important for control?
   <br>
-  By investigating these questions, we succeeded at making a single off-the-shelf vision model
+  By investigating these fundamental questions, we succeeded at making a single off-the-shelf vision model
   --trained on out-of-domain datasets-- to be competitive with or even outperform ground-truth
   features on all the four control domains.
   As efficient compact state features are hard to estimate in unstructured real-world environments
@@ -200,33 +199,6 @@ html {
   <p><b> <a href="https://arxiv.org/abs/1812.08288">TD-Regularized Actor-Critic Methods</a> </b> <br />
   <font color=#f10000>Simone Parisi</font>, Voot Tangkaratt, Jan Peters, Mohammad Emtiyaz Khan <br />
   Machine Learning, 2019
-
-  <hr>
-
-  <p><b><font size=+1> Real-World RL </font></b>
-
-  When we design RL algorithms,
-  While there has been a variety of publications on the
-    achievements of real robot learning, no systematic comparison of learned skills against manually programmed solutions
-    has been performed so far. Conducting such a systematic
-    evaluation is a challenging proposition for several reasons.
-    First, it is non-trivial to find a suitable measure to compare
-    hand-crafted and learned policies. By design all learned
-    policies try to optimize a given reward function. However,
-    using this reward function as comparison measure would
-    introduce a bias, as there is no guarantee that the manual
-    program maximizes the same reward function. Secondly,
-    manually designing a proficient program to successfully
-    solve a robotic task requires deep insights into both the
-    platform and the problem itself. In this paper, we propose
-    a task setup that addresses these problems and allows us to
-    present a systematic and thorough evaluation of state-of-theart approaches in real robot learning
-
-  <p><b>References </b></font>
-
-  <p><b> <a href="https://www.ias.informatik.tu-darmstadt.de/uploads/Member/PubSimoneParisi/parisi_iros_2015.pdf">Reinforcement Learning vs Human Programming in Tetherball Robot Games</a> </b> <br />
-  <font color=#f10000>Simone Parisi</font>, Hany Abdulsamad, Alexandros Paraschos, Christian Daniel, Jan Peters <br />
-  International Conference on Intelligent Robots and Systems (<u>IROS</u>), 2015
 
   <hr>
 
