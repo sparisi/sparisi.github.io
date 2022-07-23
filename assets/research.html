@@ -145,12 +145,12 @@ html {
 
   <p><b>References </b></font>
 
-  <p><b> <a href="https://arxiv.org/abs/2001.00119">Long-Term Visitation Value for Deep Exploration in Sparse Reward Reinforcement Learning</a> </b> <br />
-  <font color=#f10000>Simone Parisi</font>, Davide Tateo, Maximilian Hensel, Carlo D'Eramo, Jan Peters, Joni Pajarinen <br />
+  <p><b> <a href="https://arxiv.org/abs/2001.00119">Long-Term Visitation Value for Deep Exploration in Sparse Reward Reinforcement Learning</a> </b> <br>
+  <font color=#f10000>Simone Parisi</font>, Davide Tateo, Maximilian Hensel, Carlo D'Eramo, Jan Peters, Joni Pajarinen <br>
   Algorithms, 2022
 
-  <p><b> <a href="https://arxiv.org/abs/2111.13119">Interesting Object, Curious Agent: Learning Task-Agnostic Exploration</a> </b> <br />
-  <font color=#f10000>Simone Parisi</font>, Victoria Dean, Deepak Pathak, Abhinav Gupta <br />
+  <p><b> <a href="https://arxiv.org/abs/2111.13119">Interesting Object, Curious Agent: Learning Task-Agnostic Exploration</a> </b> <br>
+  <font color=#f10000>Simone Parisi</font>, Victoria Dean, Deepak Pathak, Abhinav Gupta <br>
   Neural Information Processing Systems (<u>NeurIPS</u>), 2021
 
   <hr>
@@ -171,7 +171,7 @@ html {
   </i></center>
   <br>
 
-  In a preliminary work presented at ICML, we studied well-known pre-trained vision models
+  <a href="https://arxiv.org/abs/2203.03580">In a preliminary work presented at ICML</a>, we studied well-known pre-trained vision models
   in the context of control.
   Are supervised models better than self-supervised models?
   What kind of invariances are relevant for the perception module of the control policy?
@@ -187,8 +187,8 @@ html {
 
   <p><b>References </b></font>
 
-  <p><b> <a href="https://arxiv.org/abs/2203.03580">The (Un)Surprising Effectiveness of Pre-Trained Vision Models for Control</a> </b> <br />
-  <font color=#f10000>Simone Parisi*</font>, Aravind Rajeswaran*, Senthil Purushwalkam, Abhinav Gupta <br />
+  <p><b> <a href="https://arxiv.org/abs/2203.03580">The (Un)Surprising Effectiveness of Pre-Trained Vision Models for Control</a> </b> <br>
+  <font color=#f10000>Simone Parisi*</font>, Aravind Rajeswaran*, Senthil Purushwalkam, Abhinav Gupta <br>
   International Conference on Machine Learning (<u>ICML</u>), 2022
 
   <hr>
@@ -197,20 +197,92 @@ html {
 
   <p><b>References </b></font>
 
-  <p><b> <a href="https://arxiv.org/abs/1812.08288">TD-Regularized Actor-Critic Methods</a> </b> <br />
-  <font color=#f10000>Simone Parisi</font>, Voot Tangkaratt, Jan Peters, Mohammad Emtiyaz Khan <br />
+  <p><b> <a href="https://arxiv.org/abs/1812.08288">TD-Regularized Actor-Critic Methods</a> </b> <br>
+  <font color=#f10000>Simone Parisi</font>, Voot Tangkaratt, Jan Peters, Mohammad Emtiyaz Khan <br>
   Machine Learning, 2019
 
   <hr>
+
+  <p><b> <a href="https://arxiv.org/abs/1812.08288">RL Applied to Robotics: The Tetherball Platform</a> </b> <br>
+  <br>
+  <img src="tetherball.png" width="50%" style="border-radius:0px" >
+  <br>
+
+  Motor skills learning is an important challenge in order to endow robots with the ability
+  to learn a wide range of skills and solve complex tasks.
+  In the last decade, RL has been shown the ability to acquire a variety of skills,
+  ranging from the game ball-in-a-cup to walking and jumping.
+
+  <center><i>
+  However, comparing RL against human programming	is not straightforward.
+	How do we find a suitable measure to compare hand-crafted and learned policies?
+  RL policies try to optimize a given reward function, but using this reward function as comparison measure would introduce a bias,
+  as there is no guarantee that the manual program maximizes the same reward function.
+  </i></center>
+  <br>
+
+	To address the problem of finding a fair evaluation measure,
+  <a href="https://www.ias.informatik.tu-darmstadt.de/uploads/Member/PubSimoneParisi/parisi_iros_2015.pdf">we proposed to use a robotic task</a>
+  based on the game of tetherball. In a game, in fact, there is a pre-defined success measure: the game score.
+	The robotic platform consisted of two cable-driven lightweight robots capable of highly dynamic
+  behavior due to springs between the motors and the cables which drive the joints.
+	We manually programmed one robot player using the complete model of the tetherball game,
+  while we trained the other player using RL.
+	Evaluated on real games, the RL player outperformed the manually programmed one.
+  Learning by trial-and-error, in fact, the player could compensate the prediction error
+  of the highly nonlinear forward dynamics model, and errors in the ball tracking.
+
+
+  <p><b>References </b></font>
+
+  <p><b> <a href="https://www.ias.informatik.tu-darmstadt.de/uploads/Member/PubSimoneParisi/parisi_iros_2015.pdf">Reinforcement Learning vs Human Programming in Tetherball Robot Games</a> </b> <br>
+  <font color=#f10000>Simone Parisi</font>, Hany Abdulsamad, Alexandros Paraschos, Christian Daniel, Jan Peters <br>
+  International Conference on Intelligent Robots and Systems (<u>IROS</u>), 2015
+
+
+  <hr>
+
 
   <p><b><font size=+1> Multi-Objective RL </font></b>
 
   <p><b>References </b></font>
 
-  <p><b> <a href="https://jair.org/index.php/jair/article/view/11026">Multi-objective Reinforcement Learning through Continuous Pareto Manifold Approximation</a> </b> <br />
-  <font color=#f10000>Simone Parisi</font>, Matteo Pirotta, Marcello Restelli <br />
+  Many real-world control applications are characterized
+  by the presence of multiple conflicting objectives. In these problems, the standard
+  concept of optimality is replaced by Pareto–optimality and the goal is to find the Pareto frontier,
+  a set of policies representing different compromises among the objectives.
+
+  <center><i>
+  The Pareto frontier encapsulates all the trade-offs among the objectives and gives better insight
+  into the problem, thus helping the a posteriori selection of the most favorable solution.
+  How can we efficiently build an approximation of the frontier that contains
+  solutions that are accurate, diverse, and evenly distributed?
+  </i></center>
+  <br>
+
+  My research on this topic has focused on manifold-based methods that return
+  a continuous approximation of the Pareto frontier: the idea is to optimize the parameters of
+  a function defining a manifold in the policy parameters space, so that the corresponding
+	image in the objectives space gets as close as possible to the true Pareto frontier.
+  This allows to learn an approximation in a single pass instead of using multiple optimizations.
+  <a href="https://jair.org/index.php/jair/article/view/11026">In a preliminary work</a>,
+  we presented a gradient descent method and investigated its sample complexity and the effects of its hyperparameters.
+  <a href="https://www.ias.informatik.tu-darmstadt.de/uploads/Site/EditPublication/parisi_neurocomp_morl.pdf">Later</a>,
+  we improved it by using episodic exploration strategies, importance sampling, and novel metrics to assess the quality of
+  a Pareto frontier approximation.
+
+
+  <p><b> <a href="https://www.ias.informatik.tu-darmstadt.de/uploads/Site/EditPublication/parisi_neurocomp_morl.pdf">Manifold-based Multi-objective Policy Search with Sample Reuse</a> </b> <br>
+  <font color=#f10000>Simone Parisi</font>, Matteo Pirotta, Jan Peters <br>
+  Neurocomputing, 2017
+
+  <p><b> <a href="https://jair.org/index.php/jair/article/view/11026">Multi-objective Reinforcement Learning through Continuous Pareto Manifold Approximation</a> </b> <br>
+  <font color=#f10000>Simone Parisi</font>, Matteo Pirotta, Marcello Restelli <br>
   Journal of Artificial Intelligence Research (<u>JAIR</u>), 2016
 
+  <p><b> <a href="https://www.ias.informatik.tu-darmstadt.de/uploads/Site/EditPublication/Parisi_IJCNN14.pdf">Policy Gradient Approaches for Multi-Objective Sequential Decision Making</a> </b> <br>
+  <font color=#f10000>Simone Parisi</font>, Matteo Pirotta, Nicola Smacchia, Luca Bascetta, Marcello Restelli <br>
+  International Joint Conference on Neural Networks (<u>IJCNN</u>), 2014
 
   </td></tr>
   <hr>
