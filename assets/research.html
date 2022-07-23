@@ -160,8 +160,6 @@ html {
   <hr>
 
   <p><b><font size=+1> Learning and Transfer of State Representations <br></font></b></p>
-
-  <br>
   <img src="icml2022.png" width="75%" style="border-radius:0px" >
   <br>
 
@@ -170,10 +168,11 @@ html {
   On the contrary, in RL many algorithms still follow a "tabula-rasa" paradigm where the agent performs millions or even billions of in-domain
   interactions with the environment to learn task-specific visuo-motor policies from scratch.
 
+  <p>
   <center><i>
-  Can we instead train a single near-universal vision model --a model pre-trained entirely on out-of-domain data that works for nearly any RL task?
+  Can we instead train a single near-universal vision model <span>&#8212;</span>a model pre-trained entirely on out-of-domain data that works for nearly any RL task?
   </i></center>
-  <br>
+  </p>
 
   <a href="https://arxiv.org/abs/2203.03580">In a preliminary work presented at ICML</a>, we studied well-known pre-trained vision models
   in the context of control.
@@ -182,7 +181,7 @@ html {
   Is the feature hierarchy of the vision layers important for control?
   <br>
   By investigating these fundamental questions, we succeeded at making a single off-the-shelf vision model
-  --trained on out-of-domain datasets-- to be competitive with or even outperform ground-truth
+  <span>&#8212;</span>trained on out-of-domain datasets<span>&#8212;</span> to be competitive with or even outperform ground-truth
   features on all the four control domains.
   As efficient compact state features are hard to estimate in unstructured real-world environments
   and the agent needs to rely on raw vision input,
@@ -212,19 +211,22 @@ html {
   <hr>
 
   <p><b><font size=+1> RL Applied to Robotics: The Tetherball Platform </font></b></p>
-  <br>
+
+  <p>
   <img src="tetherball.png" width="30%" style="border-radius:0px" >
   Motor skills learning is an important challenge in order to endow robots with the ability
   to learn a wide range of skills and solve complex tasks.
   In the last decade, RL has been shown the ability to acquire a variety of skills,
   ranging from the game ball-in-a-cup to walking and jumping.
+  </p>
 
+  <p>
   <center><i>
   However, comparing RL against human programming	is not straightforward.
   RL policies try to optimize a given reward function, but using this reward function as comparison measure would introduce a bias,
   as there is no guarantee that the manual program maximizes the same reward function.
   </i></center>
-  <br>
+  </p>
 
 	To address the problem of finding a fair evaluation measure,
   <a href="https://www.ias.informatik.tu-darmstadt.de/uploads/Member/PubSimoneParisi/parisi_iros_2015.pdf">we proposed a robotic task</a>
@@ -251,20 +253,20 @@ html {
 
 
   <p><b><font size=+1> Multi-Objective RL </font></b></p>
-  <br>
 
   Many real-world control applications are characterized
   by the presence of multiple conflicting objectives. In these problems,
   the goal is to find the Pareto frontier,
   a set of policies representing different compromises among the objectives.
 
+  <p>
   <center><i>
   The Pareto frontier encapsulates all the trade-offs among the objectives and gives better insight
   into the problem, thus helping the a posteriori selection of the most favorable solution.
   How can we efficiently build an approximation of the frontier that contains
   solutions that are accurate, diverse, and evenly distributed?
   </i></center>
-  <br>
+  </p>
 
   My research on this topic has focused on manifold-based methods that return
   a continuous approximation of the Pareto frontier: the idea is to optimize the parameters of
