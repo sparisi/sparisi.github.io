@@ -149,9 +149,45 @@ html {
   <table width=840 align="center" >
   <tr><td colspan="2">
 
-  <p><b><font size=+1> Exploration for RL </font></b></p>
+  <p><b><font size=+1> Learning and Transfer of Exploration Policies </font></b></p>
   <img src="teaser_nips.jpg" width="18%" style="border-radius:0px; display: inline; float: left; margin: 0 11 0 0 " >
   <img src="exploration_rl.jpg" width="40%" style="border-radius:0px; display: inline; float: left; margin: 0 11 0 0" >
+
+  Classic RL exploration is task-driven <span>&#8212;</span>the extrinsic reward is the main drive of exploration.
+  Furthermore, learning follows a tabula-rasa approach <span>&#8212;</span>the agent learns from scratch, assuming
+  isolated environments and no prior knowledge or experience.
+
+  <p>
+  <center><i>
+  Instead, we must train an agent to explore environments before training it to solve tasks.
+  How can we mimic the human behavior <span>&#8212;</span>to explore multiple environment in a lifelong process, driven by just the inherently interestingness of the world?
+  </i></center>
+  </p>
+
+  <p>
+  <a href="https://arxiv.org/abs/2001.00119">In a preliminary work published in Algorithms</a>,
+  we presented a novel approach that (1) plans exploration actions far into the future by using a long-term visitation
+  count, and (2) decouples exploration and exploitation by learning a separate function assessing
+  the exploration value of the actions.
+  </p>
+
+  <p>
+  <a href="https://openreview.net/pdf?id=knKJgksd7kA">In our NeurIPS paper</a>,
+  we proposed a novel framework to pre-train and transfer exploration in a task-agnostic manner.
+  The agent first learns to explore across many environments, driven only by a novel
+  intrinsic rewards and without any extrinsic goal.
+  Later on, the agent transfers the learned exploration policy to better explore new environments when solving tasks.
+  The key idea of our framework is that there are two components of exploration:
+  (1) an agent-centric component encouraging exploration of unseen parts of the environment based on an agent's belief;
+  (2) an environment-centric component encouraging exploration of inherently interesting objects.
+  </p>
+
+  The results of our approach were extremely promising, and open several avenues of research.
+  Is there a universal formulation of intrinsic curiosity and interestingness?
+  How important are state representation to learn / transfer exploration policies?
+  Can we use out-of-domain data <span>&#8212;</span>e.g., collected from the internet<span>&#8212;</span> to train exploration policy?
+
+
 
   <p><b>References </b></font></p>
 
@@ -210,11 +246,12 @@ html {
 
   <p><b><font size=+1> Improving Actor-Critic Stability </font></b></p>
   <p>
-  <img src="tdreg.png" width="55%" style="border-radius:0px; display: inline; float: left; margin: 0 11 0 0" >
+  <img src="tdreg.png" width="60%" style="border-radius:0px; display: inline; float: left; margin: 0 11 0 0" >
   Actor-critic methods can achieve incredible performance but they are also prone to instability.
   This is partly due to the interaction between the
   actor and the critic during learning: an inaccurate step taken by one might adversely
   affect the other and destabilize the learning.
+  </p>
 
   <p>
   <center><i>
@@ -227,7 +264,6 @@ html {
   critic. This improves stability by avoiding large steps in the actor update whenever the critic
   is highly inaccurate. TD-REG is a simple plug-and-play approach to improve stability and overall performance of
   any actor-critic method.
-  </p>
 
 
   <p><b>References </b></font></p>
