@@ -153,14 +153,19 @@ html {
   <img src="teaser_nips.jpg" width="18%" style="border-radius:0px; display: inline; float: left; margin: 0 16 0 0 " >
   <img src="exploration_rl.jpg" width="40%" style="border-radius:0px; display: inline; float: left; margin: 0 11 0 0" >
 
-  Classic RL exploration is task-driven <span>&#8212;</span>the extrinsic reward is the main drive of exploration.
-  Furthermore, learning follows a tabula-rasa approach <span>&#8212;</span>the agent learns from scratch, assuming
-  isolated environments and no prior knowledge or experience.
+  Classic RL exploration is task-driven <span>&#8212;</span>the extrinsic reward is the main drive of exploration<span>&#8212;</span>
+  or makes use of myopic intrinsic rewards <span>&#8212;</span>they depends the most promising short-term actions<span>&#8212;</span>.
+  Furthermore, learning follows a tabula-rasa approach <span>&#8212;</span>the agent learns from scratch,
+  assuming isolated environments and no prior knowledge or experience.
+
+  <br clear="all" />
 
   <p>
   <center><i>
-  Can we train an agent to explore environments before training it to solve tasks?
-  How can we mimic the human behavior <span>&#8212;</span>to explore multiple environment in a lifelong process, driven by just the inherently interestingness of the world?
+  How can we formulate deep long-term exploration policies?
+  Can we learn to explore environments before training the agent to solve tasks?
+  How can we mimic the human behavior <span>&#8212;</span>to explore multiple environment in a lifelong process,
+  driven by just the inherently interestingness of the world?
   </i></center>
   </p>
 
@@ -255,7 +260,7 @@ html {
 
   <p>
   <center><i>
-  How can make <u>any</u> actor-critic methods more stable, especially when only few samples are available?
+  How can we make <u>any</u> actor-critic method more stable, especially when only few training samples are available?
   </i></center>
   </p>
 
