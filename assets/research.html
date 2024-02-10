@@ -149,6 +149,43 @@ html {
   <table width=840 align="center" >
   <tr><td colspan="2">
 
+  <p><b><font size=+1> Monitored Markov Decision Processes <br></font></b></p>
+  <img src="mon_mdps.jpg" width="18%" style="border-radius:0px; display: inline; float: left; margin: 0 16 0 0 " >
+  <img src="mon_mdps_framework.jpg" width="40%" style="border-radius:0px; display: inline; float: left; margin: 0 11 0 0" >
+  <br>
+
+  In RL, an agent learns to perform a task by interacting with an environment and receiving feedback (a numerical reward) for
+  its actions. However, the assumption that rewards are always observable is often not applicable in real-world problems. For example, the agent may need to
+  ask a human to supervise its actions or activate a monitoring system to receive
+  feedback. There may even be a period of time before rewards become observable,
+  or a period of time after which rewards are no longer given. 
+	  
+  <p>
+  <center><i>
+  In other words,
+  there are cases where the environment generates rewards in response to the
+  agent's actions but the agent cannot observe them. 
+  </i></center>
+  </p>
+
+  <a href="https://arxiv.org/abs/2203.03580">In a preliminary work presented at AAMAS</a>, we formalize
+  a novel but general RL framework — Monitored MDPs — where the agent cannot
+  always observe rewards. We discuss the theoretical and practical consequences
+  of this setting, show challenges raised even in toy environments, and propose
+  algorithms to begin to tackle this novel setting. This paper introduces a
+  powerful new formalism that encompasses both new and existing problems and lays
+  the foundation for future research.
+
+  <p><b>References </b></font></p>
+
+  <p>
+  <b> <a href="https://arxiv.org/abs/2001.00119">Monitored Markov Decision Processes</a> </b> <br>
+  <font color=#f10000>Simone Parisi</font>, Montaser Mohammedalamen, Alireza Kazemipour, Matthew E. Taylor, Michael Bowling <br>
+  International Conference on Autonomous Agents and Multiagent Systems (<u>AAMAS</u>), 2024
+  </p>
+
+  <hr>
+
   <p><b><font size=+1> Learning and Transfer of Exploration Policies </font></b></p>
   <img src="teaser_nips.jpg" width="18%" style="border-radius:0px; display: inline; float: left; margin: 0 16 0 0 " >
   <img src="exploration_rl.jpg" width="40%" style="border-radius:0px; display: inline; float: left; margin: 0 11 0 0" >
