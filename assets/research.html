@@ -154,26 +154,28 @@ html {
   <img src="mon_mdps_framework.jpg" width="32%" style="border-radius:0px; display: inline; float: left; margin: 0 11 0 0" >
   <br>
 
-  In RL, an agent learns to perform a task by interacting with an environment and receiving feedback (a numerical reward) for
-  its actions. However, the assumption that rewards are always observable is often not applicable in real-world problems. For example, the agent may need to
-  ask a human to supervise its actions or activate a monitoring system to receive
-  feedback. There may even be a period of time before rewards become observable,
-  or a period of time after which rewards are no longer given. 
-	  
+  In RL, an agent learns to perform a task by interacting with an environment and receiving rewards for
+  its actions. However, the assumption that rewards are always observable is often not applicable in real-world problems. 
+  Consider the situation where the agent is tasked with household chores, and the quality of its behavior is provided through rewards from the homeowner and smart sensors. 
+  What if the reward is not always observable, e.g., if the owner is be present or the sensors are malfunctioning? 
+  In such situations, the agent should not interpret the lack of reward as meaning that all behavior is equally desirable. 
+  Neither should it think that avoiding monitoring or intentionally damaging sensors is an effective way to avoid negative feedback. 
+  Further, the agent may need to reason about how to seek the most useful feedback, such as planning exploratory actions when the owner is home or in well-monitored rooms. 
+
   <p>
   <center><i>
-  In other words,
-  there are cases where the environment generates rewards in response to the
-  agent's actions but the agent cannot observe them. 
+  In other words, there are cases where the environment generates rewards in response to the
+  agent's actions but the agent cannot observe them. How should the agent behave in such situations? 
+  How can it learn to seek rewards — even if their observability may not be fully under its control?
   </i></center>
   </p>
 
-  <a href="https://arxiv.org/abs/2203.03580">In a seminal work presented at AAMAS</a>, we formalize
+  <a href="https://arxiv.org/abs/2203.03580">In a seminal work presented at AAMAS</a>, we formalized
   a novel but general RL framework — Monitored MDPs — where the agent cannot
-  always observe rewards. We discuss the theoretical and practical consequences
-  of this setting, show challenges raised even in toy environments, and propose
-  algorithms to begin to tackle this novel setting. This paper introduces a
-  powerful new formalism that encompasses both new and existing problems and lays
+  always observe rewards. We discussed the theoretical and practical consequences
+  of this setting, showed challenges raised even in toy environments, and proposed
+  algorithms to begin to tackle this novel setting. This paper introduced a
+  powerful new formalism that encompasses both new and existing problems such as partial monitoring active learning, and laid
   the foundation for future research.
 
   <p><b>References </b></font></p>
