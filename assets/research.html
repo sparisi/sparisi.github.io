@@ -154,17 +154,17 @@ html {
   <br>
 
   In RL, an agent learns by interacting with an environment and receiving rewards for
-  its actions. However, the assumption that rewards are always observable is often not applicable in real-world problems. 
-  Consider the situation where the agent is tasked with household chores, and the quality of its behavior is provided through rewards from the homeowner and smart sensors. 
-  What if rewards are not always observable, e.g., if the owner is be present or the sensors are malfunctioning? 
-  In such situations, the agent should not interpret the lack of reward as meaning that all behavior is equally desirable. 
-  Neither should it think that avoiding monitoring or intentionally damaging sensors is an effective way to avoid negative feedback. 
+  its actions. However, the assumption that rewards are always observable is often not applicable in real-world problems.
+  Consider the situation where the agent is tasked with household chores, and the quality of its behavior is provided through rewards from the homeowner and smart sensors.
+  What if rewards are not always observable, e.g., if the owner is be present or the sensors are malfunctioning?
+  In such situations, the agent should not interpret the lack of reward as meaning that all behavior is equally desirable.
+  Neither should it think that avoiding monitoring or intentionally damaging sensors is an effective way to avoid negative feedback.
 
   <p>
   <center><i>
   In other words, there are cases where the environment generates rewards in response to the
-  agent's actions but the agent cannot observe them. How should the agent behave in these situations? 
-  Can it learn to seek rewards even if their observability is not fully under its control? 
+  agent's actions but the agent cannot observe them. How should the agent behave in these situations?
+  Can it learn to seek rewards even if their observability is not fully under its control?
   Can it learn optimal policies even when some rewards are never observable?
   </i></center>
   </p>
@@ -179,7 +179,20 @@ html {
   powerful new formalism that encompasses both new and existing problems, and laid
   the foundation for future research.
 
+  <a href="https://arxiv.org/abs/2406.13909">In a follow-up work</a>, we presented a novel
+  exploration paradigm to overcome the limitations of classic optimistic strategies,
+  known to fail under partial observability of rewards.
+  Although very general and applicable to MDPs as well, our
+  <i>directed exploration</i> proved to be especially effective in Mon-MDPs, setting the stage
+  for future exploration methods.
+
   <p><b>References </b></font></p>
+
+  <p>
+  <b> <a href="https://arxiv.org/abs/2406.13909">Beyond Optimism: Exploration With Partially Observable Rewards</a> </b> <br>
+  <font color=#f10000>Simone Parisi</font>, Alireza Kazemipour, Michael Bowling <br>
+  Preprint, 2024
+  </p>
 
   <p>
   <b> <a href="https://arxiv.org/abs/2402.06819">Monitored Markov Decision Processes</a> </b> <br>
