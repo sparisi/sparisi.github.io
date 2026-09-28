@@ -77,6 +77,12 @@ summary {
     cursor: pointer;
     margin: 15px 0;
 }
+a.home {
+    display: inline-block;
+    padding: 4px 14px;
+    border: 1px solid #1772d0;
+    border-radius: 4px;
+}
 
   </style>
 
@@ -157,17 +163,16 @@ html {
   <table width=840 align="center" >
   <tr><td colspan="2">
 
+  <p><a class="home" href="https://sparisi.github.io/" target="_self">Home</a></p>
+
   <details>
   <summary><b><font size=+1> Exploration via Goal-Conditioned RL </font></b></summary>
   <img src="sun_goals.svg" width="95%" style="border-radius:0px" >
   <br>
 
-  Instead of chasing intrinsic rewards that keep shifting as the agent learns, the agent can explore by repeatedly
-  picking a goal and trying to reach it with a goal-conditioned policy.
-  Learning to reach goals is a stationary, self-supervised objective, so what really drives exploration is <i>which</i> goal the agent picks.
-  Density-based methods pick rare goals, but these may be unreachable.
-  Methods based on distances or success probabilities pick reachable goals, but neglect rare ones.
-  In the example above, novelty alone sends the agent to a room it cannot enter, and reachability alone keeps it where it already is.
+  Exploration in RL is a fundamental challenge. Recent GCRL strategies (which select goals to encourage broader state coverage)
+  have shown promising results, but none scores a goal by novelty and reachability jointly: the two signals are traded off by hand,
+  applied in sequence, or one is neglected outright.
 
   <p>
   <center><i>
@@ -180,14 +185,14 @@ html {
   <p>
   <img src="sun_loop.jpg" width="48%" style="border-radius:0px; display: inline; float: left; margin: 0 16 0 0" >
   <a href="https://arxiv.org/abs/2609.08642">In our SUN paper</a>, we proposed <i>SUccessor-to-Novelty</i>, an indicator that scores
-  each candidate goal by the product of its reachability, estimated with a successor value function, and its novelty,
-  estimated with a pseudocount.
-  The product is the value of a count-bonus reward, bounds the probability of hitting the goal within a short horizon,
-  and is zero for goals that cannot be reached, no matter how rare they are.
-  The agent keeps its goal as long as the value of reaching it does not drop, and selects a new one as soon as it does.
-  Novelty comes from a lightweight pseudocount stored in the replay buffer, so candidates can be scored at every step at almost no cost.
-  SUN works with any off-policy algorithm, and consistently explores more broadly and more uniformly than state-of-the-art methods
-  in environments with unreachable states, irreversible transitions, mazes, and unbounded spaces.
+  each candidate goal by the product of its reachability (estimated with a successor value function) and its novelty
+  (estimated with a lightweight pseudocount). This results in a reachability-aware goal-selection framework that explicitly integrates
+  these two aspects, and that can be seamlessly incorporated into any off-policy RL algorithm. <br>
+  To ensure robustness against stochasticity and approximation errors, we further
+  employ an adaptive goal-selection strategy that reselects the exploration goal
+  if the estimated goal-value decreases.
+  Benchmarked on a large variety of environments with unreachable states, irreversible transitions, mazes, and unbounded spaces,
+  SUN achieves state-of-the-art performance.
   </p>
 
   <br clear="all" />
@@ -197,7 +202,7 @@ html {
   <p>
   <b> <a href="https://arxiv.org/abs/2609.08642">SUN: Reaching for Novelty in Reinforcement Learning</a> </b> <br>
   Wenyan Yang, Arsenii Mustafin, Dominik Baumann, Joni Pajarinen, <font color=#f10000>Simone Parisi</font> <br>
-  arXiv, 2026
+  European Workshop on Reinforcement Learning (EWRL), 2026
   </p>
 
   </details>
