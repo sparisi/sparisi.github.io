@@ -158,6 +158,53 @@ html {
   <tr><td colspan="2">
 
   <details>
+  <summary><b><font size=+1> Exploration via Goal-Conditioned RL </font></b></summary>
+  <img src="sun_goals.svg" width="95%" style="border-radius:0px" >
+  <br>
+
+  Instead of chasing intrinsic rewards that keep shifting as the agent learns, the agent can explore by repeatedly
+  picking a goal and trying to reach it with a goal-conditioned policy.
+  Learning to reach goals is a stationary, self-supervised objective, so what really drives exploration is <i>which</i> goal the agent picks.
+  Density-based methods pick rare goals, but these may be unreachable.
+  Methods based on distances or success probabilities pick reachable goals, but neglect rare ones.
+  In the example above, novelty alone sends the agent to a room it cannot enter, and reachability alone keeps it where it already is.
+
+  <p>
+  <center><i>
+  A useful exploration goal is both novel and reachable.
+  How should the agent encode these two signals, and how should it combine them without a coefficient to tune?
+  When should it commit to a goal, and when should it give up and pick a new one?
+  </i></center>
+  </p>
+
+  <p>
+  <img src="sun_loop.jpg" width="48%" style="border-radius:0px; display: inline; float: left; margin: 0 16 0 0" >
+  <a href="https://arxiv.org/abs/2609.08642">In our SUN paper</a>, we proposed <i>SUccessor-to-Novelty</i>, an indicator that scores
+  each candidate goal by the product of its reachability, estimated with a successor value function, and its novelty,
+  estimated with a pseudocount.
+  The product is the value of a count-bonus reward, bounds the probability of hitting the goal within a short horizon,
+  and is zero for goals that cannot be reached, no matter how rare they are.
+  The agent keeps its goal as long as the value of reaching it does not drop, and selects a new one as soon as it does.
+  Novelty comes from a lightweight pseudocount stored in the replay buffer, so candidates can be scored at every step at almost no cost.
+  SUN works with any off-policy algorithm, and consistently explores more broadly and more uniformly than state-of-the-art methods
+  in environments with unreachable states, irreversible transitions, mazes, and unbounded spaces.
+  </p>
+
+  <br clear="all" />
+
+  <p><b>References </b></font></p>
+
+  <p>
+  <b> <a href="https://arxiv.org/abs/2609.08642">SUN: Reaching for Novelty in Reinforcement Learning</a> </b> <br>
+  Wenyan Yang, Arsenii Mustafin, Dominik Baumann, Joni Pajarinen, <font color=#f10000>Simone Parisi</font> <br>
+  arXiv, 2026
+  </p>
+
+  </details>
+
+  <hr>
+
+  <details>
   <summary><b><font size=+1> Monitored Markov Decision Processes <br></font></b></summary>
   <img src="mon_mdps.jpg" width="27%" style="border-radius:0px; display: inline; float: left; margin: 0 16 0 0 " >
   <br>
