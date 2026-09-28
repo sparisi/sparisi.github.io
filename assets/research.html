@@ -70,18 +70,143 @@ img{
     height: auto;
 }
 
-details {
-    display: flow-root;
+table {
+    max-width: 100%;
 }
-summary {
-    cursor: pointer;
-    margin: 15px 0;
+
+.page-title {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 28px 0 20px 0;
 }
+
 a.home {
     display: inline-block;
+    margin-top: 12px;
     padding: 4px 14px;
     border: 1px solid #1772d0;
     border-radius: 4px;
+    transition: background-color .15s ease-in-out, color .15s ease-in-out, border-color .15s ease-in-out;
+}
+a.home:hover, a.home:focus {
+    background-color: #1772d0;
+    color: #ffffff;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #e2e4e8;
+    margin: 0;
+}
+
+details {
+    display: flow-root;
+    padding-left: 120px;
+    padding-bottom: 4px;
+}
+details[open] {
+    padding-bottom: 28px;
+    background-image: linear-gradient(#1772d0, #1772d0);
+    background-repeat: no-repeat;
+    background-position: 95px 62px;
+    background-size: 2px calc(100% - 90px);
+}
+
+summary {
+    display: grid;
+    grid-template-columns: 120px 1fr 28px;
+    align-items: baseline;
+    margin-left: -120px;
+    padding: 18px 0;
+    cursor: pointer;
+    list-style: none;
+    border-radius: 4px;
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+summary:focus {
+    outline: none;
+}
+summary:focus-visible {
+    outline: 2px solid #1772d0;
+    outline-offset: 4px;
+}
+summary b {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    transition: color .15s ease-in-out;
+}
+summary font {
+    font-size: inherit;
+}
+summary br {
+    display: none;
+}
+summary:hover b, details[open] > summary b {
+    color: #1772d0;
+}
+
+summary .years {
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+    color: #8a8f98;
+    white-space: nowrap;
+}
+details[open] > summary .years {
+    color: #1772d0;
+}
+
+summary::after {
+    content: "";
+    justify-self: end;
+    align-self: center;
+    width: 14px;
+    height: 14px;
+    background:
+        linear-gradient(#8a8f98, #8a8f98) center / 14px 2px no-repeat,
+        linear-gradient(#8a8f98, #8a8f98) center / 2px 14px no-repeat;
+    transition: transform .2s ease-in-out;
+}
+summary:hover::after {
+    background:
+        linear-gradient(#1772d0, #1772d0) center / 14px 2px no-repeat,
+        linear-gradient(#1772d0, #1772d0) center / 2px 14px no-repeat;
+}
+details[open] > summary::after {
+    transform: rotate(45deg);
+    background:
+        linear-gradient(#1772d0, #1772d0) center / 14px 2px no-repeat,
+        linear-gradient(#1772d0, #1772d0) center / 2px 14px no-repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    summary::after, summary b, a.home {
+        transition: none;
+    }
+}
+
+@media (max-width: 640px) {
+    details, details[open] {
+        padding-left: 0;
+        background-image: none;
+    }
+    summary {
+        grid-template-columns: 1fr 28px;
+        margin-left: 0;
+    }
+    summary .years {
+        grid-column: 1 / -1;
+        font-size: 13px;
+    }
+    details img {
+        float: none !important;
+        width: 100% !important;
+        margin: 0 0 12px 0 !important;
+    }
 }
 
   </style>
@@ -152,6 +277,30 @@ html {
    }
 </script>
 
+<script type="text/javascript">
+   document.addEventListener("DOMContentLoaded", function () {
+       var sections = document.querySelectorAll("details");
+       for (var i = 0; i < sections.length; i++) {
+           var years = [];
+           var paragraphs = sections[i].querySelectorAll("p");
+           for (var j = 0; j < paragraphs.length; j++) {
+               var match = paragraphs[j].textContent.trim().match(/,\s*((?:19|20)\d{2})$/);
+               if (match)
+                   years.push(parseInt(match[1]));
+           }
+           if (years.length == 0)
+               continue;
+           var first = Math.min.apply(null, years);
+           var last = Math.max.apply(null, years);
+           var span = document.createElement("span");
+           span.className = "years";
+           span.textContent = first == last ? String(first) : first + "\u2013" + last;
+           var summary = sections[i].querySelector("summary");
+           summary.insertBefore(span, summary.firstChild);
+       }
+   });
+</script>
+
 <head>
   <title>Research - Simone Parisi</title>
   <base target="_blank">
@@ -164,6 +313,8 @@ html {
   <tr><td colspan="2">
 
   <p><a class="home" href="https://sparisi.github.io/" target="_self">Home</a></p>
+
+  <h1 class="page-title">Research</h1>
 
   <details>
   <summary><b><font size=+1> Exploration via Goal-Conditioned RL </font></b></summary>
